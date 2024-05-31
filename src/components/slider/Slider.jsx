@@ -95,7 +95,11 @@ const Slider = () => {
           <div className="main__slider">
             {!flipSlide && (
               <div className="slider__head" onClick={() => handleFlipSlide()}>
-                <p>{slides[currentIndex].slideHeadText}</p>
+                <p className="slider__head-question">{slides[currentIndex].slideHeadText}</p>
+                <div className="Slider__head-bottom-text">
+                  <img src="/assets/images/tapIcon.svg" alt="icon" />
+                  <p>Tap to reveal the answer</p>
+                </div>
               </div>
             )}
             {flipSlide && (

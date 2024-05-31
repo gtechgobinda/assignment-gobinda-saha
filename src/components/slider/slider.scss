@@ -22,29 +22,29 @@
   gap: 10px;
   width: 100%;
   height: 57%;
-//   background-color: pink;
+  //   background-color: pink;
   .slider__left-click {
     width: 17.5%;
     display: flex;
     justify-content: center;
-    .icon-container{
-        background: #FDF416;
-        display: flex;
-        justify-content: center;
-        padding: 5px;
-        border-radius: 50%;
+    .icon-container {
+      background: #fdf416;
+      display: flex;
+      justify-content: center;
+      padding: 5px;
+      border-radius: 50%;
     }
   }
   .slider__right-click {
     width: 17.5%;
     display: flex;
     justify-content: center;
-    .icon-container{
-        background: #FDF416;
-        display: flex;
-        justify-content: center;
-        padding: 5px;
-        border-radius: 50%;
+    .icon-container {
+      background: #fdf416;
+      display: flex;
+      justify-content: center;
+      padding: 5px;
+      border-radius: 50%;
     }
   }
   .main__slider {
@@ -56,9 +56,27 @@
       background-color: #ffffff;
       width: 100%;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       border-radius: 20px;
+      padding: 48px 60px;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      .slider__head-question {
+        font-size: 47px;
+        line-height: 65px;
+      }
+
+      .Slider__head-bottom-text {
+        display: flex;
+        gap: 5px;
+        font-size: 14px;
+        position: absolute;
+        bottom: 0;
+        padding-bottom: 50px;
+      }
     }
     .slider__tail {
       background-color: #ffffff;
