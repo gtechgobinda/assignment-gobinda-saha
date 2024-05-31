@@ -10,11 +10,11 @@ const App = () => {
   return (
     <>
       <div className="bg-img">
-        <img src="src/assets/images/mainImg.png" alt="bg-img" />
+        <img src="/assets/images/mainImg.png" alt="bg-img" />
         <div className="header-items">
           <div className="left-item">
             <div className="img-container">
-              <img src="src/assets/images/companyLogo.svg" alt="logo" />
+              <img src="/assets/images/companyLogo.svg" alt="logo" />
             </div>
             <div className="company-name">
               <p>Cloudifyapp Pvt. Ltd.</p>
