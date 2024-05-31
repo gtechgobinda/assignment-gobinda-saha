@@ -1,0 +1,69 @@
+.bg-img {
+  position: relative;
+  img {
+    width: 100%;
+    height: 100vh;
+    animation: zoomAnimation 10s infinite alternate;
+  }
+  .header-items {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 18px;
+    .left-item{
+        display: flex;
+        gap: 5px;
+        .img-container{
+            width: 42px;
+            height: 42px;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            img{
+                width: 32px;
+                height: 18px;
+            }
+
+        }
+        .company-name{
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+    }
+    .right-item{
+
+        .sound-icon{
+            width: fit-content;
+            height: fit-content;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .sound-icon:hover{
+            background: rgba(255, 255, 255, 0.5); 
+            width: fit-content;
+            height: fit-content;
+            padding: 8px;
+            border-radius: 5px;
+        }
+    }
+  }
+}
+
+@keyframes zoomAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
