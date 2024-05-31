@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./app.scss";
 import { GoUnmute, GoMute } from "react-icons/go";
 import AllSlider from "./components/AllSlider.jsx";
+import Slider from "./components/slider/Slider.jsx";
 const App = () => {
   const [mute, setMute] = useState(false);
   const handleMute = () => {
@@ -10,7 +11,7 @@ const App = () => {
   return (
     <>
       <div className="bg-img">
-        <img src="/assets/images/mainImg.png" alt="bg-img" />
+        <img src="/assets/images/mainImg.png" alt="bg-img" className="main-bg-img"/>
         <div className="header-items">
           <div className="left-item">
             <div className="img-container">
@@ -40,15 +41,15 @@ const App = () => {
             )}
           </div>
         </div>
-        {/* <div className="slider-container">
-          <AllSlider />
-        </div> */}
+        <div className="slider-container">
+          <Slider />
+        </div>
       </div>
       <br />
       <br />
       <br />
       <br />
-      <AllSlider />
+      {/* <AllSlider /> */}
     </>
   );
 };
