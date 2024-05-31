@@ -1,13 +1,76 @@
-.slider-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.slider-container {
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  //   margin: 0 auto;
+
+  font-family: "Copernicus Trial";
 }
-.slider-dots{
-    display: flex;
+.slider-dots {
+  display: flex;
+  justify-content: center;
 }
-.slider-sec{
+.slider-sec {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 57%;
+  background-color: pink;
+  .slider__left-click {
+    width: 20%;
     display: flex;
-    align-items:center;
-    gap: 10px;
+    justify-content: center;
+  }
+  .slider__right-click {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+  }
+  .main__slider {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    .slider__head {
+      background-color: greenyellow;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .slider__tail {
+      background-color: greenyellow;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      //   position: relative;
+      border-radius: 20px;
+      .slider__tail-inner {
+        width: 100%;
+        height: 75%;
+        // position: absolute;
+        // top: 0;
+        padding: 10px;
+        padding-bottom: 0px;
+        img {
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .slider__tail-text {
+        height: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          font-size: 26px;
+        }
+      }
+    }
+  }
 }

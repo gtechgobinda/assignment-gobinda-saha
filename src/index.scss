@@ -7,15 +7,19 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 * {
-  // font-family: "Copernicus Trial";
-  // font-weight: 500;
-  font-family: "Inter", sans-serif;
+  font-family: "Copernicus Trial",sans-serif;
   font-weight: 400;
+  // font-family: "Inter", sans-serif;
+  // font-weight: 400;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-body {
+
+.copernicus-font {
   font-family: "Copernicus Trial",sans-serif;
-  font-weight: 500;
+}
+
+.inter-font {
+  font-family: "Inter", sans-serif;
 }
