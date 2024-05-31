@@ -92,10 +92,10 @@ const Slider = () => {
               <RiArrowLeftSLine size={30} />
             </div>
           </div>
-          <div className="main__slider">
-            {/* {!flipSlide && ( */}
+          <div className={`main__slider ${flipSlide ? 'flip' : ''}`}>
+            {!flipSlide && (
               <div className="front" 
-              // onClick={() => handleFlipSlide()}
+              onClick={() => handleFlipSlide()}
               >
                 <p className="slider__head-question">
                   {slides[currentIndex].slideHeadText}
@@ -105,10 +105,10 @@ const Slider = () => {
                   <p>Tap to reveal the answer</p>
                 </div>
               </div>
-            {/* )} */}
-            {/* {flipSlide && ( */}
+            )}
+            {flipSlide && (
               <div className="back" 
-              // onClick={() => handleFlipSlide()}
+              onClick={() => handleFlipSlide()}
               >
                 <div className="slider__tail-inner">
                   <img src={`${slides[currentIndex].url}`} alt="img" />
@@ -117,7 +117,7 @@ const Slider = () => {
                   <p>{slides[currentIndex].imgText}</p>
                 </div>
               </div>
-            {/* )} */}
+            )}
           </div>
           <div onClick={goToNext} className="slider__right-click">
             <div className="icon-container">
