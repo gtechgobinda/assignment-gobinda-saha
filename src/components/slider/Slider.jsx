@@ -51,32 +51,46 @@ const Slider = () => {
       url: "src/assets/images/sliderImg5.png",
       imgText: "There are 5 cats left in the room (11 - 6 = 5)",
     },
+    {
+      slideHeadText:
+        "There are 11 cats in a room. 6 cats leave. How many cats are left in the room?",
+      url: "src/assets/images/sliderImg5.png",
+      imgText: "There are 5 cats left in the room (11 - 6 = 5)",
+    },
   ];
 
   return (
     <>
       <div className="slider-container">
-        <div className="slider-dots">
-          {slides.map((slide, slideIndex) => (
-            <div key={slideIndex}>
-              {currentIndex === slideIndex && (
-                <span>
-                  {slideIndex + 1}/{slides.length}
-                </span>
-              )}
-            </div>
-          ))}
-          {slides.map((slide, slideIndex) => (
-            <div key={slideIndex}>
-              <BsDot
-                color={`${currentIndex === slideIndex ? "white" : "gray"}`}
-              />
-            </div>
-          ))}
+        <div className="slider__dots-numbering">
+          <div className="slider___numbering">
+            {slides.map((slide, slideIndex) => (
+              <div key={slideIndex}>
+                {currentIndex === slideIndex && (
+                  <span>
+                    {slideIndex + 1}/{slides.length}
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="slider-dots">
+            {slides.map((slide, slideIndex) => (
+              <div key={slideIndex}>
+                <BsDot
+                  color={`${currentIndex === slideIndex ? "white" : "gray"}`}
+                  size={30}
+                />
+              </div>
+            ))}
+          </div>
         </div>
+
         <div className="slider-sec">
           <div onClick={goToPrevious} className="slider__left-click">
-            <RiArrowLeftSLine />
+            <div className="icon-container">
+              <RiArrowLeftSLine size={30} />
+            </div>
           </div>
           <div className="main__slider">
             {!flipSlide && (
@@ -96,7 +110,9 @@ const Slider = () => {
             )}
           </div>
           <div onClick={goToNext} className="slider__right-click">
-            <RiArrowRightSLine />
+            <div className="icon-container">
+              <RiArrowRightSLine size={30}/>
+            </div>
           </div>
         </div>
       </div>
