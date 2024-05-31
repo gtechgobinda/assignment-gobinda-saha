@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./app.scss";
 import { GoUnmute, GoMute } from "react-icons/go";
+import AllSlider from "./components/AllSlider.jsx";
 const App = () => {
   const [mute, setMute] = useState(false);
   const handleMute = () => {
@@ -22,14 +23,32 @@ const App = () => {
           </div>
           <div className="right-item">
             {!mute && (
-              <GoUnmute color="white" size={20} className="sound-icon" onClick={()=>handleMute()}/>
+              <GoUnmute
+                color="white"
+                size={20}
+                className="sound-icon"
+                onClick={() => handleMute()}
+              />
             )}
             {mute && (
-              <GoMute color="white" size={20} className="sound-icon" onClick={()=>handleMute()}/>
+              <GoMute
+                color="white"
+                size={20}
+                className="sound-icon"
+                onClick={() => handleMute()}
+              />
             )}
           </div>
         </div>
+        {/* <div className="slider-container">
+          <AllSlider />
+        </div> */}
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <AllSlider />
     </>
   );
 };
