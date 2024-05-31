@@ -92,33 +92,32 @@ const Slider = () => {
               <RiArrowLeftSLine size={30} />
             </div>
           </div>
-          <div className={`main__slider ${flipSlide ? 'flip' : ''}`}>
-            {!flipSlide && (
-              <div className="front" 
-              onClick={() => handleFlipSlide()}
-              >
-                <p className="slider__head-question">
-                  {slides[currentIndex].slideHeadText}
-                </p>
-                <div className="Slider__head-bottom-text">
-                  <img src="/assets/images/tapIcon.svg" alt="icon" />
-                  <p>Tap to reveal the answer</p>
+          <div className="slider-wrapper">
+            <div className={`main__slider ${flipSlide ? "flip" : ""}`}>
+              {!flipSlide && (
+                <div className="front" onClick={() => handleFlipSlide()}>
+                  <p className="slider__head-question">
+                    {slides[currentIndex].slideHeadText}
+                  </p>
+                  <div className="Slider__head-bottom-text">
+                    <img src="/assets/images/tapIcon.svg" alt="icon" />
+                    <p>Tap to reveal the answer</p>
+                  </div>
                 </div>
-              </div>
-            )}
-            {flipSlide && (
-              <div className="back" 
-              onClick={() => handleFlipSlide()}
-              >
-                <div className="slider__tail-inner">
-                  <img src={`${slides[currentIndex].url}`} alt="img" />
+              )}
+              {flipSlide && (
+                <div className="back" onClick={() => handleFlipSlide()}>
+                  <div className="slider__tail-inner">
+                    <img src={`${slides[currentIndex].url}`} alt="img" />
+                  </div>
+                  <div className="slider__tail-text">
+                    <p>{slides[currentIndex].imgText}</p>
+                  </div>
                 </div>
-                <div className="slider__tail-text">
-                  <p>{slides[currentIndex].imgText}</p>
-                </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
+
           <div onClick={goToNext} className="slider__right-click">
             <div className="icon-container">
               <RiArrowRightSLine size={30} />
