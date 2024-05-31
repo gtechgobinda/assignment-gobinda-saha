@@ -110,6 +110,8 @@
       }
     }
     &.flip {
+      transition: all 0.5s linear;
+      transform-style: preserve-3d;
       transform: rotateY(180deg);
       .front {
         backface-visibility: hidden;
@@ -121,4 +123,3 @@
     }
   }
 }
-
