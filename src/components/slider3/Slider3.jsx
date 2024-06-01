@@ -43,9 +43,11 @@ const slideContent = [
 ];
 const Slider3 = ({ onClick, className, style }) => {
   const [flipSlide, setFlipSlide] = useState(false);
+  const [activeSlide, setActiveSlide] = useState(0);
   const handleFlipSlide = () => {
     setFlipSlide(!flipSlide);
   };
+  const totalSlides=slideContent.length
   var settings = {
     arrows: true,
     dots: true,
@@ -57,10 +59,15 @@ const Slider3 = ({ onClick, className, style }) => {
       <RightArrow onClick={onClick} className={className} style={style} />
     ),
     prevArrow: <LeftArrow onClick={onClick} />,
+    beforeChange: (current, next) => {
+      setActiveSlide(next);
+      console.log(activeSlide+1)
+    },
   };
   return (
     <>
       <div className="all-slider">
+        {/* <p>{activeSlide+1}/{slideContent.length}</p> */}
         <Slider {...settings}>
           {slideContent.map((items, index) => (
             <>
