@@ -4,7 +4,9 @@ import "./rightArrow.scss"
 const RightArrow = ({ onClick }) => {
   return (
     <div className="right-arrow-container">
-      <RiArrowRightSLine size={30} onClick={onClick} />
+        <div className="arrow-icon-container">
+          <RiArrowRightSLine size={35} onClick={onClick} />
+        </div>
     </div>
   );
 };

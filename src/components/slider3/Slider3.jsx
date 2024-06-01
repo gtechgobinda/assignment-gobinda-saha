@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./slider3.scss";
 import Slider from "react-slick";
-import RightArrow from "../slider2/arrow/RightArrow.jsx";
-import LeftArrow from "../slider2/arrow/LeftArrow.jsx";
+import RightArrow from "./arrow/RightArrow.jsx";
+import LeftArrow from "./arrow/LeftArrow.jsx";
 const slideContent = [
   {
     slideHeadText:

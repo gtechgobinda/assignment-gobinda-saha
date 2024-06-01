@@ -5,7 +5,9 @@ const LeftArrow = ({ onClick }) => {
   return (
     <>
       <div className="left-arrow-container">
-        <RiArrowLeftSLine size={30} onClick={onClick} />
+        <div className="arrow-icon-container">
+          <RiArrowLeftSLine size={35} onClick={onClick} />
+        </div>
       </div>
     </>
   );
