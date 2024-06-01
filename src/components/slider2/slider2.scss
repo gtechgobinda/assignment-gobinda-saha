@@ -1,43 +1,51 @@
+.slick-slide{
+    background: red;
+    width: 100%;
+    height:400px;
+    border-radius: 30px;
+    // margin-left: 40PX;
+}
 .slider2-container {
-  // background-color: yellow;
   width: 100%;
-  position: relative;
   .card {
-    background-color: #ffffff;
+    max-width: 65%;
+    height: 65%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: fit-content;
-    width: 65%;
-    height: 100%;
     margin: 0 auto;
     border-radius: 20px;
-    .front {
-      text-align: center;
-      .question {
-        font-size: 42px;
-      }
-      .bottom-text {
+    .front-back-wrapper {
+      background-color: #ffffff;
+      padding: 10px;
+      border-radius: 20px;
+      height: 100%;
+      .front {
         display: flex;
-        justify-content: center;
-      }
-    }
-    .back {
-      .back-inner {
-        width: 100%;
+        flex-direction: column;
+        text-align: center;
         height: 100%;
+        .question {
+          font-size: 42px;
+        }
+        .bottom-text {
+          display: flex;
+          justify-content: center;
+        }
+      }
+      .back {
+        display: flex;
+        flex-direction: column;
         .back-img-container {
-            width: 100%;
-            height: 75%;
           .back-img {
             width: 100%;
-            height: 100%;
           }
         }
         .back-ans {
-            width: 100%;
-            height: 25% !important;
           text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
     }

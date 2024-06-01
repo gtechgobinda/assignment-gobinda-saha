@@ -43,7 +43,7 @@ const slideContent = [
     imgText: "There are 5 cats left in the room (11 - 6 = 5)",
   },
 ];
-const Slider2 = ({ onClick }) => {
+const Slider2 = ({ onClick,className,style }) => {
   const [flipSlide, setFlipSlide] = useState(false);
   const handleFlipSlide = () => {
     setFlipSlide(!flipSlide);
@@ -55,7 +55,7 @@ const Slider2 = ({ onClick }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <RightArrow onClick={onClick} />,
+    nextArrow: <RightArrow onClick={onClick} className={className} style={style}/>,
     prevArrow: <LeftArrow onClick={onClick} />,
   };
   return (
@@ -64,33 +64,35 @@ const Slider2 = ({ onClick }) => {
         <Slider {...settings}>
           {slideContent.map((item, index) => (
             <>
-              <div className="card">
-                {!flipSlide && (
-                  <div
-                    className="front"
-                    key={index}
-                    onClick={() => handleFlipSlide()}
-                  >
-                    <p className="question">{item.slideHeadText}</p>
-                    <div className="bottom-text">
-                      <img src="/assets/images/tapIcon.svg" alt="icon" />
-                      <p>Tap to reveal the answer</p>
-                    </div>
-                  </div>
-                )}
-                {flipSlide && (
-                  <div className="back" onClick={() => handleFlipSlide()}>
-                    <div className="back-inner">
-                      <div className="back-img-container">
-                        <img className="back-img" src={item.url} alt="" />
+              <div className="card-wrapper">
+                <div className="card">
+                  <div className="front-back-wrapper">
+                    {!flipSlide && (
+                      <div
+                        className="front"
+                        key={index}
+                        onClick={() => handleFlipSlide()}
+                      >
+                        <p className="question">{item.slideHeadText}</p>
+                        <div className="bottom-text">
+                          <img src="/assets/images/tapIcon.svg" alt="icon" />
+                          <p>Tap to reveal the answer</p>
+                        </div>
                       </div>
+                    )}
+                    {flipSlide && (
+                      <div className="back" onClick={() => handleFlipSlide()}>
+                        <div className="back-img-container">
+                          <img className="back-img" src={item.url} alt="" />
+                        </div>
 
-                      <div className="back-ans">
-                        <p>{item.imgText}</p>
+                        <div className="back-ans">
+                          <p className="text">{item.imgText}</p>
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
-                )}
+                </div>
               </div>
             </>
           ))}
