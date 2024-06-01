@@ -49,7 +49,7 @@ const Slider3 = ({ onClick, className, style }) => {
   var settings = {
     arrows: true,
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
