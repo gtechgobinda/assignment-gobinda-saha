@@ -3,6 +3,7 @@ import "./app.scss";
 import { GoUnmute, GoMute } from "react-icons/go";
 import AllSlider from "./components/AllSlider.jsx";
 import Slider from "./components/slider/Slider.jsx";
+import Slider2 from "./components/slider2/Slider2.jsx";
 const App = () => {
   const [mute, setMute] = useState(false);
   const handleMute = () => {
@@ -42,7 +43,8 @@ const App = () => {
           </div>
         </div>
         <div className="slider-container">
-          <Slider />
+          {/* <Slider /> */}
+          <Slider2/>
         </div>
       </div>
       <br />
@@ -50,6 +52,7 @@ const App = () => {
       <br />
       <br />
       {/* <AllSlider /> */}
+      {/* <Slider2/> */}
     </>
   );
 };
