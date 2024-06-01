@@ -62,25 +62,36 @@ const Slider3 = ({ onClick, className, style }) => {
     <>
       <div className="all-slider">
         <Slider {...settings}>
-          {slideContent.map((items,index) => (
+          {slideContent.map((items, index) => (
             <>
-              <div className="main-slider" key={index}>
+              <div
+                className={`main-slider ${flipSlide ? "flip" : ""}`}
+                key={index}
+              >
                 {!flipSlide && (
-                  <div className="front" onClick={() => handleFlipSlide()}>
-                    <div className="question">{items.slideHeadText}</div>
-                    <div className="bottom-text">
-                      <img src="/assets/images/tapIcon.svg" alt="icon" />
-                      <p className="tap-text">Tap to reveal the answer</p>
+                  <div className="front-wrapper">
+                    <div className="front" onClick={() => handleFlipSlide()}>
+                      <div className="question">{items.slideHeadText}</div>
+                      <div className="bottom-text">
+                        <img src="/assets/images/tapIcon.svg" alt="icon" />
+                        <p className="tap-text">Tap to reveal the answer</p>
+                      </div>
                     </div>
                   </div>
                 )}
                 {flipSlide && (
-                  <div className="back"onClick={() => handleFlipSlide()}>
-                    <div className="img-container">
-                      <img src={items.url} alt="icon" className="slider-img" />
-                    </div>
-                    <div className="img-text">
+                  <div className="back-wrapper">
+                    <div className="back" onClick={() => handleFlipSlide()}>
+                      <div className="img-container">
+                        <img
+                          src={items.url}
+                          alt="icon"
+                          className="slider-img"
+                        />
+                      </div>
+                      <div className="img-text">
                         <p>{items.imgText}</p>
+                      </div>
                     </div>
                   </div>
                 )}

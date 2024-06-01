@@ -1,26 +1,33 @@
-.all-slider{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 0 auto;
-    // width: 65%;
-    width: 100%;
+.all-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
+  // width: 65%;
+  width: 100%;
 }
 
 .main-slider {
   background-color: #ffffff;
   display: flex;
   justify-content: center;
-  padding: 10px;
+  // padding: 10px;
   height: 65vh;
   width: 55%;
   margin: 0 auto;
   border-radius: 20px;
-  .front{
-    padding: 48px 60px;
+  position: relative;
+  transition: all 0.4s linear;
+  transform-style: preserve-3d;
+  .front-wrapper{
     width: 100%;
     height: 100%;
-    .question{
+    position: absolute;
+    .front {
+      padding: 48px 60px;
+      width: 100%;
+      height: 100%;
+      .question {
         font-size: 47px;
         line-height: 65px;
         text-align: center;
@@ -28,37 +35,56 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    .bottom-text{
+      }
+      .bottom-text {
         height: 25%;
         display: flex;
         justify-content: center;
         align-items: center;
+      }
     }
-    
   }
-  .back{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+
+  .back-wrapper {
+    position: absolute;
     width: 100%;
     height: 100%;
-    .img-container{
+    transform: rotateY(180deg);
+    .back {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      .img-container {
         height: 75%;
         width: 100%;
-        .slider-img{
-            width: 100%;
-            height: 100%;
+        .slider-img {
+          width: 100%;
+          height: 100%;
         }
-    }
-    .img-text{
+      }
+      .img-text {
         height: 25%;
         display: flex;
         justify-content: center;
         align-items: center;
+      }
     }
-
+  }
+  &.flip {
+    transition: all 0.5s linear;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    .front-wrapper {
+      backface-visibility: hidden;
+      z-index: 2;
+    }
+    .back-wrapper {
+      z-index: 1;
+    }
   }
 }
 
