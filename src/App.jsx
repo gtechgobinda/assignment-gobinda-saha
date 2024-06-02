@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./app.scss";
 import { GoUnmute, GoMute } from "react-icons/go";
-import AllSlider from "./components/AllSlider.jsx";
-import Slider from "./components/slider/Slider.jsx";
-import Slider2 from "./components/slider2/Slider2.jsx";
 import Slider3 from "./components/slider3/Slider3.jsx";
 import useSliderhook from "./hook.js";
 const App = (props) => {

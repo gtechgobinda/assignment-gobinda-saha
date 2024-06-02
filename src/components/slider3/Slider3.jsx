@@ -3,6 +3,8 @@ import "./slider3.scss";
 import Slider from "react-slick";
 import RightArrow from "./arrow/RightArrow.jsx";
 import LeftArrow from "./arrow/LeftArrow.jsx";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const slideContent = [
   {
     slideHeadText:
