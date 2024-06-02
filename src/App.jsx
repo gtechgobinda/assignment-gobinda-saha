@@ -1,19 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./app.scss";
 import { GoUnmute, GoMute } from "react-icons/go";
 import AllSlider from "./components/AllSlider.jsx";
 import Slider from "./components/slider/Slider.jsx";
 import Slider2 from "./components/slider2/Slider2.jsx";
 import Slider3 from "./components/slider3/Slider3.jsx";
-const App = () => {
+import useSliderhook from "./hook.js";
+const App = (props) => {
+  const {
+    activeSlide,
+    setActiveSlide,
+    totalSlides,
+    goToSlide,
+    setGoToSlide,
+    handelGoToSlide,
+  } = useSliderhook();
   const [mute, setMute] = useState(false);
   const handleMute = () => {
     setMute(!mute);
   };
   return (
     <>
-      <div className="bg-img">
-        <img src="/assets/images/mainImg.png" alt="bg-img" className="main-bg-img"/>
+      {/* <div className="bg-img"> */}
+      <div className={`bg-img `}>
+        <img
+          src="/assets/images/mainImg.png"
+          alt="bg-img"
+          // className="main-bg-img"
+          className={`main-bg-img ${
+            !goToSlide 
+              ? "animation-added"
+              : ""
+          }`}
+        />
         <div className="header-items">
           <div className="left-item">
             <div className="img-container">
@@ -46,7 +65,14 @@ const App = () => {
         <div className="slider-container">
           {/* <Slider /> */}
           {/* <Slider2/> */}
-          <Slider3/>
+          <Slider3
+            activeSlide={activeSlide}
+            setActiveSlide={setActiveSlide}
+            totalSlides={totalSlides}
+            goToSlide={goToSlide}
+            setGoToSlide={setGoToSlide}
+            handelGoToSlide={handelGoToSlide}
+          />
         </div>
       </div>
       <br />
@@ -55,7 +81,7 @@ const App = () => {
       <br />
       {/* <AllSlider /> */}
       {/* <Slider2/> */}
-      <Slider3/>
+      <Slider3 />
     </>
   );
 };

@@ -47,21 +47,30 @@ const slideContent = [
     imgText: "There are 5 cats left in the room (11 - 6 = 5)",
   },
 ];
-const Slider3 = ({ onClick, className, style }) => {
+const Slider3 = ({
+  onClick,
+  className,
+  style,
+  activeSlide,
+  setActiveSlide,
+  totalSlides,
+  goToSlide,
+  setGoToSlide,
+  handelGoToSlide,
+}) => {
   const [flipSlide, setFlipSlide] = useState(false);
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [goToSlide, setGoToSlide] = useState(false);
-  const handelGoToSlide = () => {
-    setGoToSlide(!goToSlide);
-    if (!goToSlide) {
-      // Reset active slide to 0 when returning to initial state
-      setActiveSlide(0);
-    }
-  };
+  // const [activeSlide, setActiveSlide] = useState(0);
+  // const [goToSlide, setGoToSlide] = useState(false);
+  // const handelGoToSlide = () => {
+  //   setGoToSlide(!goToSlide);
+  //   if (!goToSlide) {
+  //     setActiveSlide(0);
+  //   }
+  // };
   const handleFlipSlide = () => {
     setFlipSlide(!flipSlide);
   };
-  const totalSlides = slideContent.length;
+  // const totalSlides = slideContent.length;
   var settings = {
     arrows: true,
     // dots: true,
@@ -98,7 +107,9 @@ const Slider3 = ({ onClick, className, style }) => {
         {!goToSlide && (
           <>
             <div className="play-sec">
-              <p className="play-sec-text1">Addition and Subtraction Facts within 20</p>
+              <p className="play-sec-text1">
+                Addition and Subtraction Facts within 20
+              </p>
               <p className="play-sec-text2">
                 Test your knowledge with the following questions, tap a card to
                 flip it and uncover the answer, good luck!
