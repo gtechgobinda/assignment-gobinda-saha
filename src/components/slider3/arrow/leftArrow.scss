@@ -6,7 +6,7 @@
     justify-content: center;
     z-index: 2;
     .arrow-icon-container{
-        background-color: yellow;
+        background-color: #d4d4d4;
         width: 60px;
         height: 60px;
         border-radius: 50%;
@@ -17,9 +17,10 @@
 
     }
     .arrow-icon-container:hover{
+        background-color: yellow;
         transform: scale(1.1);
         transition: 0.2s ease-in-out;
-        box-shadow: 0px 0px 10px 2px yellow;
+        box-shadow: 0px 0px 5px 1px yellow;
     }
     .no-active{
         background-color: #d4d4d4;
