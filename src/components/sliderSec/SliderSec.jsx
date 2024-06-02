@@ -17,7 +17,8 @@ const SliderSec = ({
   setGoToSlide,
   handelGoToSlide,
 }) => {
-  const [flipSlide, setFlipSlide] = useState(false);
+  // const [flipSlide, setFlipSlide] = useState(false);
+  const [flipSlide, setFlipSlide] = useState(Array(slideContent.length).fill(false));
   // const [activeSlide, setActiveSlide] = useState(0);
   // const [goToSlide, setGoToSlide] = useState(false);
   // const handelGoToSlide = () => {
@@ -26,8 +27,11 @@ const SliderSec = ({
   //     setActiveSlide(0);
   //   }
   // };
-  const handleFlipSlide = () => {
-    setFlipSlide(!flipSlide);
+  const handleFlipSlide = (index) => {
+    const updatedFlipSlide = [...flipSlide];
+    updatedFlipSlide[index] = !updatedFlipSlide[index];
+    // setFlipSlide(!flipSlide);
+    setFlipSlide(updatedFlipSlide);
   };
   // const totalSlides = slideContent.length;
   var settings = {
@@ -105,19 +109,27 @@ const SliderSec = ({
                 key={index}
               > */}
                   {index < slideContent.length - 1 && (
+                    // <div
+                    //   className={`${
+                    //     index === slideContent.length - 1
+                    //       ? `last-slider`
+                    //       : `main-slider ${flipSlide ? "flip" : ""}`
+                    //   }`}
+                    //   key={index}
+                    // >
                     <div
-                      className={`${
-                        index === slideContent.length - 1
-                          ? `last-slider`
-                          : `main-slider ${flipSlide ? "flip" : ""}`
-                      }`}
-                      key={index}
-                    >
-                      {!flipSlide && (
+    className={`${
+      index === slideContent.length - 1
+        ? `last-slider`
+        : `main-slider ${flipSlide[index] ? "flip" : ""}`
+    }`}
+    key={index}
+  >
+                      {!flipSlide[index] && (
                         <div className="front-wrapper">
                           <div
                             className="front"
-                            onClick={() => handleFlipSlide()}
+                            onClick={() => handleFlipSlide(index)}
                           >
                             <div className="question">
                               {items.slideHeadText}
@@ -134,11 +146,11 @@ const SliderSec = ({
                           </div>
                         </div>
                       )}
-                      {flipSlide && (
+                      {flipSlide[index] && (
                         <div className="back-wrapper">
                           <div
                             className="back"
-                            onClick={() => handleFlipSlide()}
+                            onClick={() => handleFlipSlide(index)}
                           >
                             <div className="img-container">
                               <img
