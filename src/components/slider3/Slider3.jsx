@@ -67,7 +67,7 @@ const Slider3 = ({ onClick, className, style }) => {
   return (
     <>
       <div className="all-slider">
-        {/* <p>{activeSlide+1}/{slideContent.length}</p> */}
+        <p className="slider-pagination">{activeSlide+1}/{slideContent.length}</p>
         <Slider {...settings}>
           {slideContent.map((items, index) => (
             <>
