@@ -40,6 +40,12 @@ const slideContent = [
     url: "/assets/images/sliderImg5.png",
     imgText: "There are 5 cats left in the room (11 - 6 = 5)",
   },
+  {
+    slideHeadText:
+      "There are 11 cats in a room. 6 cats leave. How many cats are left in the room?",
+    url: "/assets/images/sliderImg5.png",
+    imgText: "There are 5 cats left in the room (11 - 6 = 5)",
+  },
 ];
 const Slider3 = ({ onClick, className, style }) => {
   const [flipSlide, setFlipSlide] = useState(false);
@@ -47,62 +53,100 @@ const Slider3 = ({ onClick, className, style }) => {
   const handleFlipSlide = () => {
     setFlipSlide(!flipSlide);
   };
-  const totalSlides=slideContent.length
+  const totalSlides = slideContent.length;
   var settings = {
     arrows: true,
-    dots: true,
+    // dots: true,
+    dots: activeSlide + 1 === totalSlides ? false : true,
     infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: (
-      <RightArrow onClick={onClick} className={className} style={style} />
+      <RightArrow
+        onClick={onClick}
+        className={className}
+        style={style}
+        activeSlide={activeSlide}
+        totalSlides={totalSlides}
+      />
     ),
-    prevArrow: <LeftArrow onClick={onClick} />,
+    prevArrow: (
+      <LeftArrow
+        onClick={onClick}
+        activeSlide={activeSlide}
+        totalSlides={totalSlides}
+      />
+    ),
     beforeChange: (current, next) => {
       setActiveSlide(next);
-      console.log(activeSlide+1)
+      console.log(activeSlide + 1);
     },
   };
   return (
     <>
       <div className="all-slider">
-        <p className="slider-pagination">{activeSlide+1}/{slideContent.length}</p>
+        {activeSlide + 1 !== totalSlides && (
+          <p className="slider-pagination">
+            {activeSlide + 1}/{slideContent.length}
+          </p>
+        )}
         <Slider {...settings}>
           {slideContent.map((items, index) => (
             <>
-              <div
+              {/* <div
                 className={`main-slider ${flipSlide ? "flip" : ""}`}
                 key={index}
-              >
-                {!flipSlide && (
-                  <div className="front-wrapper">
-                    <div className="front" onClick={() => handleFlipSlide()}>
-                      <div className="question">{items.slideHeadText}</div>
-                      <div className="bottom-text">
-                        <img src="/assets/images/tapIcon.svg" alt="icon" />
-                        <p className="tap-text">Tap to reveal the answer</p>
+              > */}
+              {index < slideContent.length - 1 && (
+                <div
+                  className={`${
+                    index === slideContent.length - 1
+                      ? `last-slider`
+                      : `main-slider ${flipSlide ? "flip" : ""}`
+                  }`}
+                  key={index}
+                >
+                  {!flipSlide && (
+                    <div className="front-wrapper">
+                      <div className="front" onClick={() => handleFlipSlide()}>
+                        <div className="question">{items.slideHeadText}</div>
+                        <div className="bottom-text">
+                          <img src="/assets/images/tapIcon.svg" alt="icon" />
+                          <p className="tap-text">Tap to reveal the answer</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )}
-                {flipSlide && (
-                  <div className="back-wrapper">
-                    <div className="back" onClick={() => handleFlipSlide()}>
-                      <div className="img-container">
-                        <img
-                          src={items.url}
-                          alt="icon"
-                          className="slider-img"
-                        />
-                      </div>
-                      <div className="img-text">
-                        <p>{items.imgText}</p>
+                  )}
+                  {flipSlide && (
+                    <div className="back-wrapper">
+                      <div className="back" onClick={() => handleFlipSlide()}>
+                        <div className="img-container">
+                          <img
+                            src={items.url}
+                            alt="icon"
+                            className="slider-img"
+                          />
+                        </div>
+                        <div className="img-text">
+                          <p>{items.imgText}</p>
+                        </div>
                       </div>
                     </div>
+                  )}
+                </div>
+              )}
+
+              {index === slideContent.length - 1 && (
+                // JSX for the last slide
+                <div className="last-slide">
+                  {/* Your JSX for the last slide goes here */}
+                  <div className="last-slide-content">
+                    {/* <h2>Last Slide Content</h2> */}
+                    <p>This is the last slide of the slider.</p>
                   </div>
-                )}
-              </div>
+                </div>
+              )}
             </>
           ))}
         </Slider>
