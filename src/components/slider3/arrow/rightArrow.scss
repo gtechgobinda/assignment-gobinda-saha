@@ -1,7 +1,7 @@
 .right-arrow-container{
     position: absolute;
     right: 0;
-    top: 45%;
+    top: 44%;
     width: 17.5%;
     display: flex;
     justify-content: center;
@@ -43,7 +43,7 @@
 }
 @media (max-width:600px){
     .right-arrow-container{
-        top: 80%;
+        top: 95%;
         .arrow-icon-container{
             width: 48px;
             height: 48px;
