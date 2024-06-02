@@ -22,17 +22,10 @@ const App = (props) => {
   const isLastSlide = activeSlide === totalSlides - 1;
   return (
     <>
-      {/* <div className="bg-img"> */}
       <div className={`bg-img `}>
         <img
           src="/assets/images/mainImg.png"
           alt="bg-img"
-          // className="main-bg-img"
-          // className={`main-bg-img ${
-          //   !goToSlide 
-          //     ? "animation-added"
-          //     : ""
-          // }`}
           className={`main-bg-img ${(!goToSlide || isLastSlide) ? "animation-added" : ""}`}
         />
         <div className="header-items">
@@ -65,8 +58,6 @@ const App = (props) => {
           </div>
         </div>
         <div className="slider-container">
-          {/* <Slider /> */}
-          {/* <Slider2/> */}
           <Slider3
             activeSlide={activeSlide}
             setActiveSlide={setActiveSlide}
@@ -77,13 +68,6 @@ const App = (props) => {
           />
         </div>
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      {/* <AllSlider /> */}
-      {/* <Slider2/> */}
-      <Slider3 />
     </>
   );
 };

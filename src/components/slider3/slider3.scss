@@ -1,6 +1,8 @@
-.slick-dots {
-  // position: absolute;
-  // top: -40px;
+.slick-dots li button:before {
+  color: white;
+}
+.slick-dots .slide-active button:after {
+  color: white;
 }
 .all-slider {
   display: flex;
@@ -37,9 +39,9 @@
   }
   .play-start-btn {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 5px;
+    align-items: center;
+    gap: 10px;
     background: yellow;
     padding: 20px 30px;
     cursor: pointer;
