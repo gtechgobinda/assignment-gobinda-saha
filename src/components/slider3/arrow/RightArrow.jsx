@@ -8,9 +8,10 @@ const RightArrow = ({ onClick, activeSlide, totalSlides }) => {
       className={`${
         activeSlide + 1 === totalSlides ? "arrow-hide" : "right-arrow-container"
       }`}
+      onClick={onClick}
     >
       <div className="arrow-icon-container">
-        <RiArrowRightSLine size={35} onClick={onClick} />
+        <RiArrowRightSLine size={35} />
       </div>
     </div>
   );

@@ -58,6 +58,14 @@ const Slider3 = ({
       setActiveSlide(next);
       console.log(activeSlide + 1);
     },
+    responsive: [
+      {
+        breakpoint: 441,
+        settings: {
+          dots: false,
+        },
+      },
+    ],
   };
 
   return (
@@ -86,7 +94,7 @@ const Slider3 = ({
           <>
             {activeSlide + 1 !== totalSlides && (
               <p className="slider-pagination">
-                {activeSlide + 1}{" "}/{" "}{slideContent.length-1}
+                {activeSlide + 1} / {slideContent.length - 1}
               </p>
             )}
             <Slider {...settings}>
@@ -157,7 +165,10 @@ const Slider3 = ({
                             className="success-tick"
                           />
                         </div>
-                        <p className="success-text" style={{fontFamily:'"Inter", sans-serif'}}>
+                        <p
+                          className="success-text"
+                          style={{ fontFamily: '"Inter", sans-serif' }}
+                        >
                           Hope you learned something new!
                         </p>
                         <div
@@ -170,7 +181,12 @@ const Slider3 = ({
                               alt=""
                             />
                           </div>
-                          <p className="play-again-text" style={{fontFamily:'"Inter", sans-serif'}}>Play Again</p>
+                          <p
+                            className="play-again-text"
+                            style={{ fontFamily: '"Inter", sans-serif' }}
+                          >
+                            Play Again
+                          </p>
                         </div>
                       </div>
                     </div>

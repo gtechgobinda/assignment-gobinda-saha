@@ -12,11 +12,12 @@ const LeftArrow = ({ onClick, currentSlide, activeSlide, totalSlides }) => {
             ? "arrow-hide"
             : "left-arrow-container"
         }`}
+        onClick={onClick}
       >
         <div
           className={currentSlide !== 0 ? `arrow-icon-container` : `no-active`}
         >
-          <RiArrowLeftSLine size={35} onClick={onClick} />
+          <RiArrowLeftSLine size={35} />
         </div>
       </div>
     </>
