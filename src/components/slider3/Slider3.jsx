@@ -86,7 +86,7 @@ const Slider3 = ({
           <>
             {activeSlide + 1 !== totalSlides && (
               <p className="slider-pagination">
-                {activeSlide + 1}{" "}/{" "}{slideContent.length}
+                {activeSlide + 1}{" "}/{" "}{slideContent.length-1}
               </p>
             )}
             <Slider {...settings}>
