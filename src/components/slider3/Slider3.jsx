@@ -198,7 +198,7 @@ const Slider3 = ({
                             className="success-tick"
                           />
                         </div>
-                        <p className="success-text">
+                        <p className="success-text" style={{fontFamily:'"Inter", sans-serif'}}>
                           Hope you learned something new!
                         </p>
                         <div
@@ -211,7 +211,7 @@ const Slider3 = ({
                               alt=""
                             />
                           </div>
-                          <p className="play-again-text">Play Again</p>
+                          <p className="play-again-text" style={{fontFamily:'"Inter", sans-serif'}}>Play Again</p>
                         </div>
                       </div>
                     </div>
