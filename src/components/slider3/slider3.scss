@@ -1,4 +1,4 @@
-.slick-dots{
+.slick-dots {
   // position: absolute;
   // top: -40px;
 }
@@ -11,7 +11,7 @@
   width: 100%;
   // position: relative;
   // z-index: 50;
-  .slider-pagination{
+  .slider-pagination {
     color: #ffffff;
     display: flex;
     justify-content: center;
@@ -30,7 +30,7 @@
   position: relative;
   transition: all 0.4s linear;
   transform-style: preserve-3d;
-  .front-wrapper{
+  .front-wrapper {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -102,4 +102,74 @@
 .bottom-text {
   display: flex;
   text-align: center;
+}
+.last-slide-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
+  .last-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    .success-tick {
+      width: 100%;
+    }
+    .success-img-container {
+      width: 260px;
+    }
+    .success-text {
+      color: #ffffff;
+    }
+    // .play-again-btn {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   gap: 5px;
+    //   background: yellow;
+    //   padding: 20px 30px;
+    //   cursor: pointer;
+    //   border-radius: 72px;
+    //   .play-again-icon-container img{
+    //     transition: transform 0.3s ease;
+    //   }
+    //   .play-again-icon-container:hover img{
+    //     transform: rotate(360deg);
+    //   }
+    //   .play-again-icon-container:not(:hover) img {
+    //     transform: rotate(0deg);
+    //   }
+    //   .play-again-text {
+    //     font-size: 18px;
+    //     font-weight: 900;
+    //   }
+    // }
+
+    .play-again-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      background: yellow;
+      padding: 20px 30px;
+      cursor: pointer;
+      border-radius: 72px;
+    }
+    
+    .play-again-btn img {
+      transition: transform 0.3s ease;
+    }
+    
+    .play-again-btn:hover img {
+      transform: rotate(360deg) scale(1.2);
+
+    }
+    .play-again-text {
+      font-size: 18px;
+      font-weight: 900;
+    }
+    
+  }
 }

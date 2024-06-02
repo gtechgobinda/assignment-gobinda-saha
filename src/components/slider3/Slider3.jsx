@@ -136,14 +136,25 @@ const Slider3 = ({ onClick, className, style }) => {
                   )}
                 </div>
               )}
-
               {index === slideContent.length - 1 && (
-                // JSX for the last slide
-                <div className="last-slide">
-                  {/* Your JSX for the last slide goes here */}
-                  <div className="last-slide-content">
-                    {/* <h2>Last Slide Content</h2> */}
-                    <p>This is the last slide of the slider.</p>
+                <div className="last-slide-wrapper">
+                  <div className="last-slide">
+                    <div className="success-img-container">
+                      <img
+                        src="/assets/images/successTick.svg"
+                        alt=""
+                        className="success-tick"
+                      />
+                    </div>
+                    <p className="success-text">
+                      Hope you learned something new!
+                    </p>
+                    <div className="play-again-btn">
+                      <div className="play-again-icon-container">
+                        <img src="/assets/images/playAgainIcon.svg" alt="" />
+                      </div>
+                      <p className="play-again-text">Play Again</p>
+                    </div>
                   </div>
                 </div>
               )}
