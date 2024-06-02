@@ -19,7 +19,7 @@
     z-index: 1;
     .left-item {
       display: flex;
-      gap: 5px;
+      gap: 8px;
       .img-container {
         width: 42px;
         height: 42px;
@@ -36,6 +36,9 @@
       .company-name {
         font-size: 14px;
         color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
       }
     }
     .right-item {

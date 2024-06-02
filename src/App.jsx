@@ -26,7 +26,9 @@ const App = (props) => {
         <img
           src="/assets/images/mainImg.png"
           alt="bg-img"
-          className={`main-bg-img ${(!goToSlide || isLastSlide) ? "animation-added" : ""}`}
+          className={`main-bg-img ${
+            !goToSlide || isLastSlide ? "animation-added" : ""
+          }`}
         />
         <div className="header-items">
           <div className="left-item">
@@ -34,8 +36,12 @@ const App = (props) => {
               <img src="/assets/images/companyLogo.svg" alt="logo" />
             </div>
             <div className="company-name">
-              <p>Cloudifyapp Pvt. Ltd.</p>
-              <p>By John Doe</p>
+              <p style={{ fontFamily: '"Inter", sans-serif', fontWeight: '600' }}>
+                Cloudifyapp Pvt. Ltd.
+              </p>
+              <p style={{ fontFamily: '"Inter", sans-serif', fontWeight: '400',fontSize:'11px' }}>
+                By John Doe
+              </p>
             </div>
           </div>
           <div className="right-item">
@@ -67,6 +73,7 @@ const App = (props) => {
             handelGoToSlide={handelGoToSlide}
           />
         </div>
+
       </div>
     </>
   );
