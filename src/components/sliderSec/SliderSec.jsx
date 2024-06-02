@@ -17,26 +17,17 @@ const SliderSec = ({
   setGoToSlide,
   handelGoToSlide,
 }) => {
-  // const [flipSlide, setFlipSlide] = useState(false);
-  const [flipSlide, setFlipSlide] = useState(Array(slideContent.length).fill(false));
-  // const [activeSlide, setActiveSlide] = useState(0);
-  // const [goToSlide, setGoToSlide] = useState(false);
-  // const handelGoToSlide = () => {
-  //   setGoToSlide(!goToSlide);
-  //   if (!goToSlide) {
-  //     setActiveSlide(0);
-  //   }
-  // };
+  const [flipSlide, setFlipSlide] = useState(
+    Array(slideContent.length).fill(false)
+  );
   const handleFlipSlide = (index) => {
     const updatedFlipSlide = [...flipSlide];
     updatedFlipSlide[index] = !updatedFlipSlide[index];
-    // setFlipSlide(!flipSlide);
     setFlipSlide(updatedFlipSlide);
   };
-  // const totalSlides = slideContent.length;
   var settings = {
     arrows: true,
-    // dots: true,
+    dots: true,
     dots: activeSlide + 1 === totalSlides ? false : true,
     infinite: false,
     speed: 500,
@@ -104,27 +95,15 @@ const SliderSec = ({
             <Slider {...settings}>
               {slideContent.map((items, index) => (
                 <>
-                  {/* <div
-                className={`main-slider ${flipSlide ? "flip" : ""}`}
-                key={index}
-              > */}
                   {index < slideContent.length - 1 && (
-                    // <div
-                    //   className={`${
-                    //     index === slideContent.length - 1
-                    //       ? `last-slider`
-                    //       : `main-slider ${flipSlide ? "flip" : ""}`
-                    //   }`}
-                    //   key={index}
-                    // >
                     <div
-    className={`${
-      index === slideContent.length - 1
-        ? `last-slider`
-        : `main-slider ${flipSlide[index] ? "flip" : ""}`
-    }`}
-    key={index}
-  >
+                      className={`${
+                        index === slideContent.length - 1
+                          ? `last-slider`
+                          : `main-slider ${flipSlide[index] ? "flip" : ""}`
+                      }`}
+                      key={index}
+                    >
                       {!flipSlide[index] && (
                         <div className="front-wrapper">
                           <div
