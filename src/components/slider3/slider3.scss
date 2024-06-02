@@ -9,10 +9,7 @@
   flex-direction: column;
   gap: 10px;
   margin: 0 auto;
-  // width: 65%;
   width: 100%;
-  // position: relative;
-  // z-index: 50;
   .slider-pagination {
     color: #ffffff;
     display: flex;
@@ -68,7 +65,7 @@
   justify-content: center;
   // padding: 10px;
   height: 65vh;
-  width: 55%;
+  width: 52%;
   margin: 0 auto;
   border-radius: 20px;
   position: relative;
@@ -126,6 +123,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 26px;
+        line-height: 42px;
       }
     }
   }
@@ -167,30 +166,6 @@
     .success-text {
       color: #ffffff;
     }
-    // .play-again-btn {
-    //   display: flex;
-    //   align-items: center;
-    //   justify-content: center;
-    //   gap: 5px;
-    //   background: yellow;
-    //   padding: 20px 30px;
-    //   cursor: pointer;
-    //   border-radius: 72px;
-    //   .play-again-icon-container img{
-    //     transition: transform 0.3s ease;
-    //   }
-    //   .play-again-icon-container:hover img{
-    //     transform: rotate(360deg);
-    //   }
-    //   .play-again-icon-container:not(:hover) img {
-    //     transform: rotate(0deg);
-    //   }
-    //   .play-again-text {
-    //     font-size: 18px;
-    //     font-weight: 900;
-    //   }
-    // }
-
     .play-again-btn {
       display: flex;
       align-items: center;
@@ -212,6 +187,72 @@
     .play-again-text {
       font-size: 18px;
       font-weight: 900;
+    }
+  }
+}
+
+@media(max-width:1439px){
+  .main-slider{
+    width: 65%;
+  }
+}
+@media(max-width:1024px){
+  .main-slider {
+    width: 65%;
+    .front-wrapper {
+      .front {
+        padding: 18px;
+        .question {
+          font-size: 30px;
+          line-height: 44px;
+        }
+        .bottom-text {
+        }
+      }
+    }
+  
+    .back-wrapper {
+      .back {
+        .img-container {
+          .slider-img {
+          }
+        }
+        .img-text {
+          font-size: 17px;
+          line-height: 32px;
+          padding: 12px;
+        }
+      }
+    }
+  }
+}
+@media(max-width:769px){
+  .main-slider {
+    width: 65%;
+    .front-wrapper {
+      .front {
+        padding: 18px;
+        .question {
+          font-size: 30px;
+          line-height: 44px;
+        }
+        .bottom-text {
+        }
+      }
+    }
+  
+    .back-wrapper {
+      .back {
+        .img-container {
+          .slider-img {
+          }
+        }
+        .img-text {
+          font-size: 17px;
+          line-height: 32px;
+          padding: 12px;
+        }
+      }
     }
   }
 }
