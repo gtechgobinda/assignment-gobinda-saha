@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./slider3.scss";
+import "./slidersec.scss";
 import Slider from "react-slick";
 import RightArrow from "./arrow/RightArrow.jsx";
 import LeftArrow from "./arrow/LeftArrow.jsx";
@@ -47,7 +47,7 @@ const slideContent = [
     imgText: "There are 5 cats left in the room (11 - 6 = 5)",
   },
 ];
-const Slider3 = ({
+const SliderSec = ({
   onClick,
   className,
   style,
@@ -226,4 +226,4 @@ const Slider3 = ({
   );
 };
 
-export default Slider3;
+export default SliderSec;
