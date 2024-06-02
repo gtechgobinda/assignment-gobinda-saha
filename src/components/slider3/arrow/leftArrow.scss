@@ -34,3 +34,18 @@
 .arrow-hide{
     display: none;
 }
+
+@media (max-width:769px){
+    .left-arrow-container{
+        top: 105%;
+        .arrow-icon-container{
+            width: 48px;
+            height: 48px;
+        }
+        .no-active{
+            width: 48px;
+            height: 48px;
+        }
+    }
+
+}
