@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./app.scss";
 import { GoUnmute, GoMute } from "react-icons/go";
-import Slider3 from "./components/slider3/Slider3.jsx";
 import useSliderhook from "./hook.js";
+import SliderSec from "./components/sliderSec/SliderSec.jsx";
 const App = (props) => {
   const {
     activeSlide,
@@ -61,7 +61,7 @@ const App = (props) => {
           </div>
         </div>
         <div className="slider-container">
-          <Slider3
+          <SliderSec
             activeSlide={activeSlide}
             setActiveSlide={setActiveSlide}
             totalSlides={totalSlides}

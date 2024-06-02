@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import "./slider3.scss";
+import "./sliderSec.scss";
 import Slider from "react-slick";
 import RightArrow from "./arrow/RightArrow.jsx";
 import LeftArrow from "./arrow/LeftArrow.jsx";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { slideContent } from "../content/content.jsx";
-const Slider3 = ({
+const SliderSec = ({
   onClick,
   className,
   style,
@@ -201,4 +201,4 @@ const Slider3 = ({
   );
 };
 
-export default Slider3;
+export default SliderSec;
