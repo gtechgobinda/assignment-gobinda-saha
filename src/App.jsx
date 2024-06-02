@@ -19,6 +19,7 @@ const App = (props) => {
   const handleMute = () => {
     setMute(!mute);
   };
+  const isLastSlide = activeSlide === totalSlides - 1;
   return (
     <>
       {/* <div className="bg-img"> */}
@@ -27,11 +28,12 @@ const App = (props) => {
           src="/assets/images/mainImg.png"
           alt="bg-img"
           // className="main-bg-img"
-          className={`main-bg-img ${
-            !goToSlide 
-              ? "animation-added"
-              : ""
-          }`}
+          // className={`main-bg-img ${
+          //   !goToSlide 
+          //     ? "animation-added"
+          //     : ""
+          // }`}
+          className={`main-bg-img ${(!goToSlide || isLastSlide) ? "animation-added" : ""}`}
         />
         <div className="header-items">
           <div className="left-item">
