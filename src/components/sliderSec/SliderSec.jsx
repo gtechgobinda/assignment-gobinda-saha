@@ -27,7 +27,6 @@ const SliderSec = ({
   };
   var settings = {
     arrows: true,
-    dots: true,
     dots: activeSlide + 1 === totalSlides ? false : true,
     infinite: false,
     speed: 500,
