@@ -278,4 +278,41 @@
       }
     }
   }
+  .last-slide-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+    .last-slide {
+      .success-img-container {
+        width: 150px;
+      }
+      .success-text {
+
+        text-align: center;
+      }
+      .play-again-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        background: yellow;
+        padding: 20px 30px;
+        cursor: pointer;
+        border-radius: 72px;
+      }
+  
+      .play-again-btn img {
+        transition: transform 0.3s ease;
+      }
+  
+      .play-again-btn:hover img {
+        transform: rotate(360deg) scale(1.2);
+      }
+      .play-again-text {
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+  }
 }
