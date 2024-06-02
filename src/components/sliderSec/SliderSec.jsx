@@ -96,53 +96,59 @@ const SliderSec = ({
                 <>
                   {index < slideContent.length - 1 && (
                     <div
-                      className={`${
-                        index === slideContent.length - 1
-                          ? `last-slider`
-                          : `main-slider ${flipSlide[index] ? "flip" : ""}`
+                      className={`main-slider-wrapper ${
+                        !flipSlide[index] ? `tilted` : ""
                       }`}
-                      key={index}
                     >
-                      {!flipSlide[index] && (
-                        <div className="front-wrapper">
-                          <div
-                            className="front"
-                            onClick={() => handleFlipSlide(index)}
-                          >
-                            <div className="question">
-                              {items.slideHeadText}
-                            </div>
-                            <div className="bottom-text">
-                              <img
-                                src="/assets/images/tapIcon.svg"
-                                alt="icon"
-                              />
-                              <p className="tap-text">
-                                Tap to reveal the answer
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                      {flipSlide[index] && (
-                        <div className="back-wrapper">
-                          <div
-                            className="back"
-                            onClick={() => handleFlipSlide(index)}
-                          >
-                            <div className="img-container">
-                              <img
-                                src={items.url}
-                                alt="icon"
-                                className="slider-img"
-                              />
-                            </div>
-                            <div className="img-text">
-                              <p>{items.imgText}</p>
+                      <div
+                        className={`${
+                          index === slideContent.length - 1
+                            ? `last-slider`
+                            : `main-slider ${flipSlide[index] ? "flip" : ""}`
+                        }`}
+                        key={index}
+                      >
+                        {!flipSlide[index] && (
+                          <div className="front-wrapper">
+                            <div
+                              className="front"
+                              onClick={() => handleFlipSlide(index)}
+                            >
+                              <div className="question">
+                                {items.slideHeadText}
+                              </div>
+                              <div className="bottom-text">
+                                <img
+                                  src="/assets/images/tapIcon.svg"
+                                  alt="icon"
+                                />
+                                <p className="tap-text">
+                                  Tap to reveal the answer
+                                </p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      )}
+                        )}
+                        {flipSlide[index] && (
+                          <div className="back-wrapper">
+                            <div
+                              className="back"
+                              onClick={() => handleFlipSlide(index)}
+                            >
+                              <div className="img-container">
+                                <img
+                                  src={items.url}
+                                  alt="icon"
+                                  className="slider-img"
+                                />
+                              </div>
+                              <div className="img-text">
+                                <p>{items.imgText}</p>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   )}
                   {index === slideContent.length - 1 && (
