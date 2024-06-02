@@ -96,9 +96,8 @@ const SliderSec = ({
                 <>
                   {index < slideContent.length - 1 && (
                     <div
-                      className={`main-slider-wrapper ${
-                        !flipSlide[index] ? `tilted` : ""
-                      }`}
+                      className="main-slider-wrapper 
+                        tilted"
                     >
                       <div
                         className={`${
